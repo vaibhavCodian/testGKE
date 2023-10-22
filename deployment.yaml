@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: TestApplication
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: TestApp
+  template:
+    metadata:
+      labels:
+        app: TestApp
+    spec:
+      containers:
+      - name: TestApp
+        image: gcr.io/your-project-id/your-app-name:v1
+        ports:
+        - containerPort: 5000
