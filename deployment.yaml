@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: TestApplication
+  name: test-application
 spec:
   replicas: 3
   selector:
@@ -13,7 +13,7 @@ spec:
         app: TestApp
     spec:
       containers:
-      - name: TestApp
-        image: gcr.io/your-project-id/your-app-name:v1
+      - name: testapp
+        image: us-central1-docker.pkg.dev/vaibhav-training/myregistery/testapp
         ports:
         - containerPort: 5000
